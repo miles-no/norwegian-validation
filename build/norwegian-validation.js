@@ -53,8 +53,7 @@ var accountNumber = function accountNumber(accNumber) {
 };
 
 var organizationNumber = function organizationNumber(orgNumber) {
-  var validatedOrgNumber = orgNumber;
-  validatedOrgNumber += '';
+  var validatedOrgNumber = orgNumber.toString();
   if (!validatedOrgNumber || validatedOrgNumber.length !== 9) {
     return false;
   }
@@ -62,7 +61,7 @@ var organizationNumber = function organizationNumber(orgNumber) {
 };
 
 var birthNumber = function birthNumber(number) {
-  var validatedBirthNumber = number.toString();
+  var validatedBirthNumber = number.toString().replace(/\./g, '');
   if (!validatedBirthNumber || validatedBirthNumber.length !== 11) {
     return false;
   }

@@ -50,8 +50,7 @@ const accountNumber = (accNumber) => {
 };
 
 const organizationNumber = (orgNumber) => {
-  let validatedOrgNumber = orgNumber;
-  validatedOrgNumber += '';
+  const validatedOrgNumber = orgNumber.toString();
   if (!validatedOrgNumber || validatedOrgNumber.length !== 9) {
     return false;
   }
