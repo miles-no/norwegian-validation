@@ -4,8 +4,7 @@ machine:
 dependencies:
   pre:
     - openssl aes-256-cbc -d -in .circle_secrets_cipher -k $KEY >> ~/.circlerc
-    - curl -u$NPM_USER:$NPM_PASS https://miles.jfrog.io/miles/api/npm/auth > ~/.npmrc
-    - npm config set registry https://miles.jfrog.io/miles/api/npm/npm-virtual
+    - echo -e "$NPM_USER\n$NPM_PASS\n$NPM_EMAIL" | npm login
     - git config --global user.email "webteam@miles.no"
     - git config --global user.name "NoCMS"
 deployment:
@@ -14,5 +13,5 @@ deployment:
     commands:
       - npm run bump-version
       - git commit -am "Bumped version to $PACKAGE_VERSION [skip ci]"
-      - npm publish --registry https://miles.jfrog.io/miles/api/npm/npm-virtual
+      - npm publish
       - git push origin master
