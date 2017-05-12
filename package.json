@@ -1,6 +1,6 @@
 {
   "name": "norwegian-validation",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Validation according to Norwegian rules",
   "main": "lib/index.js",
   "scripts": {
