@@ -1,17 +1,8 @@
 machine:
   node:
-    version: v6.2.2
-dependencies:
-  pre:
-    - openssl aes-256-cbc -d -in .circle_secrets_cipher -k $KEY >> ~/.circlerc
-    - echo -e "$NPM_USER\n$NPM_PASS\n$NPM_EMAIL" | npm login
-    - git config --global user.email "webteam@miles.no"
-    - git config --global user.name "NoCMS"
-deployment:
-  package:
-    branch: master
-    commands:
-      - npm run bump-version
-      - git commit -am "Bumped version to $PACKAGE_VERSION [skip ci]"
-      - npm publish
-      - git push origin master
+    version: v7.10.0
+test:
+  override:
+    - npm test
+  post:
+    - npm run semantic-release || true
