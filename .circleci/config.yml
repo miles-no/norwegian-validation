@@ -23,5 +23,5 @@ workflows:
     jobs:
       - test
       - release:
-        required:
-          - test
+          requires:
+            - test
