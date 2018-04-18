@@ -7,7 +7,6 @@
     "test": "babel ./test --out-dir ./build && tape build/*.js | tap-spec",
     "nsp": "nsp check",
     "eslint": "eslint src test",
-    "build": "babel ./src --out-dir ./lib --source-maps --presets es2015,stage-2",
     "coverage": "tap --cov --coverage-report=lcov build/*.js",
     "prepare": "babel ./src --out-dir ./lib --source-maps"
   },
