@@ -12,9 +12,8 @@ jobs:
       - image: circleci/node:9.5.0
     steps:
       - checkout
-      - run:
-          name: Semantic release
-          command: npm run semantic-release || true
+      - run: npm install
+      - run: npm run semantic-release || true
 
 workflows:
   version: 2
