@@ -1,0 +1,10 @@
+test
+build
+.babelrc
+.editorconfig
+.eslintrc
+.gitignore
+.npmignore
+.npmrc
+Jenkinsfile
+package-lock.json
