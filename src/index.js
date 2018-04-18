@@ -87,7 +87,7 @@ const kidNumber = (number) => {
   return parseInt(controlDigit, 10) === _mod11OfNumberWithControlDigit(validatedKidNumber) || parseInt(controlDigit, 10) === _luhnValue(validatedKidNumber);
 };
 
-export default {
+module.exports = {
   accountNumber,
   organizationNumber,
   birthNumber,
