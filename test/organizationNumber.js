@@ -1,5 +1,5 @@
-'use strict';
-const test = require('tape');
+import test from 'tape';
+
 const sut = require('../');
 
 test('Validate organization numbers', (t) => {

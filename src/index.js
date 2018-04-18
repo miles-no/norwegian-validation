@@ -1,4 +1,7 @@
 // https://github.com/miles-no/no-validation
+/* eslint no-underscore-dangle: off */
+/* eslint no-plusplus: off */
+/* eslint no-mixed-operators: off */
 
 const _luhnValue = (number) => {
   let sum = 0;
@@ -62,11 +65,15 @@ const birthNumber = (number) => {
   if (!validatedBirthNumber || validatedBirthNumber.length !== 11) {
     return false;
   }
-  let checksum1 = 11 - (_sum(validatedBirthNumber, [3, 7, 6, 1, 8, 9, 4, 5, 2]) % 11);
+  let checksum1 = 11 - (_sum(validatedBirthNumber, [
+    3, 7, 6, 1, 8, 9, 4, 5, 2,
+  ]) % 11);
   if (checksum1 === 11) {
     checksum1 = 0;
   }
-  let checksum2 = 11 - (_sum(validatedBirthNumber, [5, 4, 3, 2, 7, 6, 5, 4, 3, 2]) % 11);
+  let checksum2 = 11 - (_sum(validatedBirthNumber, [
+    5, 4, 3, 2, 7, 6, 5, 4, 3, 2,
+  ]) % 11);
   if (checksum2 === 11) {
     checksum2 = 0;
   }

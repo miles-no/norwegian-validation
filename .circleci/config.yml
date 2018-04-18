@@ -5,8 +5,18 @@ jobs:
       - image: circleci/node:9.5.0
     steps:
       - checkout
-      - run: npm install
-      - run: npm test
+      - run:
+          name: Install npm packages
+          command: npm install
+      - run:
+          name: Linting
+          command: npm run eslint
+      - run:
+          name: Security checks
+          command: npm run nsp check
+      - run:
+          name: Test code
+          command: npm test
   release:
     docker:
       - image: circleci/node:9.5.0
